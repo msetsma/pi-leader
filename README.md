@@ -78,7 +78,7 @@ npm test        # sequencer unit tests; no install needed
 
 ### Demo
 
-`vhs demo/demo.tape` regenerates `demo/demo.gif`. It needs [vhs](https://github.com/charmbracelet/vhs), the fork checked out at `../pi-my` and pi-outline at `../pi-outline`. It runs offline with a fake model.
+`vhs demo/demo.tape` regenerates `demo/demo.gif`. It needs [vhs](https://github.com/charmbracelet/vhs), the fork checked out at `../pi-my` and pi-outline at `../pi-outline` (override with `PI_DIR` and `OUTLINE_DIR`). It runs offline with a fake model in a throwaway `HOME`.
 
 ## License
 
