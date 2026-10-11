@@ -1,0 +1,20 @@
+{
+	"name": "pi-leader",
+	"version": "0.0.0",
+	"description": "Vim-style leader key sequences with a which-key hint for pi",
+	"type": "module",
+	"keywords": ["pi-package", "pi-extension", "keybindings", "leader-key", "which-key"],
+	"license": "MIT",
+	"repository": "github:msetsma/pi-leader",
+	"pi": {
+		"extensions": ["./src/index.ts"]
+	},
+	"scripts": {
+		"check": "node ../pi-my/node_modules/typescript/bin/tsc -p .",
+		"test": "node --test test/*.test.ts"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"@earendil-works/pi-tui": "*"
+	}
+}

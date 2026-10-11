@@ -1,0 +1,8 @@
+{
+	"extends": "../pi-my/tsconfig.json",
+	"compilerOptions": {
+		"typeRoots": ["../pi-my/node_modules/@types"]
+	},
+	"include": ["src/**/*.ts", "../pi-my/packages/coding-agent/src/utils/highlight-js.d.ts"],
+	"exclude": []
+}
