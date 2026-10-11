@@ -1,12 +1,19 @@
 # pi-leader
 
+[![CI](https://github.com/msetsma/pi-leader/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/msetsma/pi-leader/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/github/license/msetsma/pi-leader)](LICENSE) [![pi extension](https://img.shields.io/badge/pi-extension-blue)](https://github.com/earendil-works/pi)
+
 Vim-style leader key sequences for [pi](https://github.com/earendil-works/pi). While a sequence is pending, a which-key hint above the editor lists the keys that can come next.
+
+![Space opens a which-key hint; space k lists the leader keys, space m opens the model selector, space p o toggles the outline panel, and ctrl+space works while the editor has text](demo/demo.gif)
 
 ## Requires
 
-- `TUI.getFocusedComponent()` on the `TUI` interface. The `my` branch of the [msetsma/pi-my](https://github.com/msetsma/pi-my/tree/my) fork adds it. Stock pi already has the method on its TUI class, so the extension runs on stock pi too. Only `npm run check` needs the fork.
-- Everything else is stock pi extension API: `ctx.ui.onTerminalInput`, `ctx.ui.setEditorComponent`, `CustomEditor`, `pi.getCommands()`.
-- `p o` needs [pi-outline](https://github.com/msetsma/pi-outline). Without it, the binding shows a warning and does nothing else.
+Stock pi extension API only: `ctx.ui.onTerminalInput`, `ctx.ui.setEditorComponent`, `CustomEditor`, `pi.getCommands()`, `TUI.getFocusedComponent()`.
+
+> [!NOTE]
+> `npm run check` needs `getFocusedComponent()` on the `TUI` interface, which only the `my` branch of the [msetsma/pi-my](https://github.com/msetsma/pi-my/tree/my) fork declares. Stock pi has the method on its TUI class, so the extension itself runs on stock pi.
+
+The `p o` binding needs [pi-outline](https://github.com/msetsma/pi-outline). Without it, the binding shows a warning and does nothing else.
 
 ## Install
 
@@ -68,6 +75,10 @@ Known limit: in fullscreen, the alt-screen listener sees keys before pi-leader d
 npm run check   # typecheck; expects the fork checked out at ../pi-my (on its my branch) with node_modules installed
 npm test        # sequencer unit tests; no install needed
 ```
+
+### Demo
+
+`vhs demo/demo.tape` regenerates `demo/demo.gif`. It needs [vhs](https://github.com/charmbracelet/vhs), the fork checked out at `../pi-my` and pi-outline at `../pi-outline`. It runs offline with a fake model.
 
 ## License
 
